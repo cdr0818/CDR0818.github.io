@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人简介</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_5039821_426pjjna65r.css?spm=a313x.manage_type_myprojects.i1.9.6c4a3a815qfBzd&file=font_5039821_426pjjna65r.css">
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            border: 2px solid #3498db;
+            
+            background-size: 200px 200px;
+        }
+        
+        th, td {
+            border: 1px solid #3498db;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+        }
+        
+        tr:nth-child(even) {
+            background-color: rgba(248, 249, 250, 0.8);
+        }
+        
+        tr:hover {
+            background-color: rgba(227, 242, 253, 0.8);
+        }
+        
+        .title {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 28px;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        
+        .section-title {
+            color: #2c3e50;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+            margin: 30px 0 15px 0;
+        }
+        
+        .evaluation {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #3498db;
+            line-height: 1.8;
+            text-align: justify;
+        }
+        
+        .project-box {
+            background-color: #e8f4fd;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #27ae60;
+        }
+        
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #3498db;
+            box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+        }
+        
+        .avatar-cell {
+            text-align: center !important;
+            background-color: rgba(236, 240, 241, 0.9) !important;
+        }
+    </style>
+</head>
+<body>
+   
+        
+        <table>
+            <caption><h2><i class="fas fa-user"></i> 个人简历</h2></caption>
+            <tr>
+                <th colspan="9"><i class="fas fa-info-circle"></i> 基本信息</th>
+            </tr>
+            <tr>
+                <td rowspan="5" class="avatar-cell">
+                    <!-- 头像图片 -->
+                    <img src="../image/cdr.jpg" width='200px' height='200px'  alt="头像" class="avatar">
+                </td>
+                <td style="font-weight: bold; background-color: #fef9e7;"><i class="fas fa-user-tag"></i> 姓名</td>
+                <td  style="background-color: #fef9e7;">陈德睿</td>
+                <td style="font-weight: bold; background-color: #eafaf1;"></i> 性别</td>
+                <td colspan="3"style="background-color: #eafaf1;">男</td>
+                <td style="font-weight: bold; background-color: #eafaf1;"></i> 年龄</td>
+                <td colspan="3" style="background-color: #eafaf1;">18</td>
+
+            </tr>
+            <tr>
+                <td style="font-weight: bold; background-color: #ebf5fb;"><i class="fas fa-graduation-cap"></i> 学历</td>
+                <td style="background-color: #ebf5fb;">本科</td>
+                <td style="font-weight: bold; background-color: #eafaf1;"></i> 毕业院校</td>
+                <td colspan="5"style="background-color: #eafaf1;">鲁东大学</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold; background-color: #fdf2e9;"><i class="fas fa-laptop-code"></i> 专业</td>
+                <td colspan="7" style="background-color: #fdf2e9;">计算机科学与技术</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold; background-color: #f4ecf7;"><i class="fas fa-calendar-alt"></i> 健康状况</td>
+                <td colspan="7" style="background-color: #f4ecf7;">良好</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold; background-color: #eafaf1;"><i class="fas fa-map-marker-alt"></i> 籍贯</td>
+                <td colspan="7" style="background-color: #eafaf1;">山东省泰安市</td>
+            </tr>
+            <tr>
+                <td rowspan="3" style="font-weight: bold; background-color: #ecf0f1; text-align: center;">
+                    <i class="fas fa-phone"></i><br>联系方式
+                </td>
+                <td style="font-weight: bold; background-color: #eafaf1;"><i class="fas fa-mobile-alt"></i> 手机</td>
+                <td style="background-color: #eafaf1;">19735386096</td>
+                <td style="font-weight: bold; background-color: #eafaf1;"><i class="fas fa-envelope"></i> 邮箱</td>
+                <td colspan="5" style="background-color: #eafaf1;">cdr0818@qq.com</td>
+            </tr>
+            <tr>
+                <td colspan="1" style="font-weight: bold; background-color: #fef5e7;"><i class="fab fa-github"></i> GitHub</td>
+                <td colspan="9" style="background-color: #fef5e7;">github.com/CDR0818</td>
+                
+            </tr>
+            <tr>
+                <td style="font-weight: bold; background-color: #fef5e7;"><i class="fab fa-qq"></i> QQ</td>
+                <td colspan="9" style="background-color: #fef5e7;">2873096081</td>
+            </tr>
+            <tr>
+                <td colspan="2"style="font-weight: bold; background-color: #ecf0f1; text-align: center;">
+                    <i class="fas fa-comment"></i><br>求职意向
+                </td>
+                <td colspan="7" style="background-color: #d1f2eb;">算法工程师，软件开发工程师</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="font-weight: bold; background-color: #ecf0f1; text-align: center;">
+                    <i class="fas fa-star"></i><br>个人爱好与特长
+                </td>
+                <td colspan="7" style="background-color: #d1f2eb;">
+                    <ol type="i" start="1" increase>
+                        <li><i class="fas fa-laptop-code"></i>擅长web开发</li>
+                        <li><span class="iconfont icon-yumaoqiu"></span>羽毛球</li>
+                        <li><i class="fas fa-film"></i>看电影</li>
+                        <li><i class="fas fa-book"></i>读书</li>
+                        
+                    </ol>
+                    
+                    
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="font-weight: bold; background-color: #ecf0f1; text-align: center;">
+                    <i class="fas fa-trophy"></i><br>技能证书
+                </td>
+                <td colspan="7" style="background-color: #fdf2e9;">
+                    <ol type="1" start="1" increase>
+                        <li><i class="fas fa-book"></i>计算机三级</li>
+                        <li><i class="fas fa-book"></i>CDA二级</li>
+                        <li><i class="fas fa-book"></i>软考二级</li>
+
+                    </ol>
+                    
+                </td>
+            </tr>
+        </table>
+        
+        <h3 class="section-title"><i class="fas fa-project-diagram"></i> 项目经历</h3>
+        <div class="project-box">
+            <h4><i class="fas fa-trophy"></i> 2025年软件杯大赛本科组</h4>
+            <p><strong>题目：</strong>基于人工智能的智能客服系统设计与实现</p>
+            <p><strong>项目描述：</strong>本项目旨在开发一个基于自然语言处理技术的智能客服系统，能够自动理解用户问题并提供准确的回答。系统将集成机器学习算法，具备自我学习和优化的能力，不断提升服务质量和用户满意度。</p>
+            <p><strong>技术栈：</strong>Python、TensorFlow、NLP、Flask、MySQL、React</p>
+            <p><strong>个人兴趣点：</strong>对AI技术在实际业务场景中的应用非常感兴趣，希望通过此项目深入了解自然语言处理和机器学习技术，提升自己的AI开发能力。</p>
+        </div>
+        
+        <h3 class="section-title"><i class="fas fa-comment"></i> 自我评价</h3>
+        <div class="evaluation">
+            <p>作为一名计算机专业的学生，我始终保持着对技术的热情和对知识的渴望。在一个多月的学习中，我不仅有了一定的编程基础，还培养了良好的问题解决能力和团队协作精神。</p>
+            
+            <p>在技术方面，我不断学习c语言，web开发，对数据结构与算法有着深入的理解。同时，我也积极关注前沿技术发展，在人工智能、大数据等领域进行了初步探索和学习。</p>
+            
+            <p>在学习态度上，我始终保持严谨认真的作风，对待每一个任务都精益求精。不断通过实践来巩固理论知识。</p>
+            
+            <p>在团队合作中，我善于沟通协调，能够很好地融入团队氛围，同时也勇于承担责任，在关键时刻能够挺身而出解决问题。我认为一个人的力量是有限的，只有团队协作才能创造出更大的价值。</p>
+
+            <p>在生活方面，我乐于劳动，善于沟通，经常为长辈和同学给予帮助。平时也热爱运动，保持身体健康。</p>
+            
+            <p>面向未来，我希望能够在软硬件开发领域继续深耕，不断提升自己的技术水平和综合素质。我期待能够参与到更多有意义的项目中去，用技术创造价值，用创新驱动发展。我相信通过不懈的努力和持续的学习，一定能够在这个充满机遇和挑战的时代中实现自己的人生价值，为社会的数字化转型贡献自己的力量。</p>
+        </div>
+        <h3 class="section-title"><i class="fas fa-comment"></i> 结语</h32>
+        <div class="evaluation">
+            <p>以上是我的个人简介，望老师批阅</p>
+        </div>
+</body>
+</html>
+
