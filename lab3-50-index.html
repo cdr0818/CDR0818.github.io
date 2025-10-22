@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>图书促销</title>
+    <style>
+       
+       
+
+        
+        header {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+        }
+        .logo {
+            float: left;
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+        }
+        .nav {
+            float: right;
+            list-style: none;
+        }
+        .nav li {
+            float: left; 
+            margin-left: 20px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            padding: 8px 15px;
+            display: block; 
+            cursor: pointer; 
+            border-radius: 4px; 
+        }
+        .nav a:hover {
+            background-color: #007bff;
+            color: #fff; 
+        }
+
+       
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        
+        .main-container {
+            width: 90%;
+            margin: 0 auto; 
+        }
+       
+        .left-sidebar {
+            width: 15%;
+            float: left;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border: 1px solid #e9ecef;
+            margin-right: 2%;
+            position: relative; 
+        }
+        .left-sidebar h3 {
+            position: relative;
+            top: -5px; 
+            font-size: 18px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+        }
+        .left-sidebar ul {
+            list-style: none;
+        }
+        .left-sidebar li {
+            margin: 10px 0;
+        }
+        .left-sidebar a {
+            text-decoration: none;
+            color: #333;
+            cursor: pointer;
+        }
+        .left-sidebar a:hover {
+            color: #007bff;
+            text-decoration: underline;
+        }
+
+       
+        .main-content {
+            width: 52%;
+            float: left;
+            margin-right: 2%;
+        }
+        .book-section {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border: 1px solid #e9ecef;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .book-section h4 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #007bff;
+        }
+        
+        .hot-books {
+            margin: -10px; 
+        }
+        .book-item {
+            width: 31%;
+            float: left;
+            background-color: #fff;
+            padding: 15px;
+            margin: 10px;
+            border: 1px solid #e9ecef;
+            text-align: center;
+            cursor: pointer; 
+            transition: transform 0.2s; 
+        }
+        .book-item:hover {
+            transform: scale(1.05); 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .book-item img {
+            width: 80%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        
+        .new-books table {
+            width: 100%;
+            border-collapse: collapse; }
+        .new-books th, .new-books td {
+            border: 1px solid #e9ecef;
+            padding: 12px;
+            text-align: center;
+        }
+        .new-books th {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+       
+        .right-sidebar {
+            width: 22%;
+            float: right;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border: 1px solid #e9ecef;
+        }
+        .promotion {
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #e9ecef;
+            cursor: pointer;
+        }
+        .promotion h5 {
+            color: #dc3545; 
+            margin-bottom: 10px;
+        }
+
+        
+        footer {
+            clear: both; 
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+            margin-top: 20px;
+            border-top: 1px solid #e9ecef;
+        }
+    </style>
+</head>
+<body>
+   
+    <header class="clearfix">
+        <div class="logo">📚 图书商城</div>
+        <ul class="nav">
+            <li><a href="https://book.douban.com/">首页</a></li>
+            <li><a href="https://book.douban.com/chart?subcat=all&icn=index-topchart-popular">热门推荐</a></li>
+            <li><a href="https://book.douban.com/latest?subcat=%E5%85%A8%E9%83%A8">新书上市</a></li>
+            <li><a href="https://www.douban.com/about/contactus">联系我们</a></li>
+        </ul>
+    </header>
+
+    
+    <div class="main-container clearfix">
+        <aside class="left-sidebar">
+            <h3>图书分类</h3>
+            <ul>
+                <li><a href="#">科技</a></li>
+                <li><a href="#">文学</a></li>
+                <li><a href="#">流行</a></li>
+                <li><a href="#">文化</a></li>
+                <li><a href="#">生活</a></li>
+            </ul>
+        </aside>
+
+        
+        <main class="main-content">
+            <img src="../image/booksell.png" title="图书促销" alt="图书促销" width="800px" height="200px"
+            <section class="book-section">
+                <h4>🔥 热门推荐</h4>
+                
+                <div class="hot-books clearfix">
+                    <div class="book-item">
+                        <img src="../image/撒旦探戈.jpg" alt="撒旦探戈">
+                        <a href="https://book.douban.com/subject/26394865/">查看</a>
+                        <p>《撒旦探戈》</p>
+                        <p>￥29.00</p>
+                    </div>
+                    <div class="book-item">
+                        <img src="../image/反抗的忧郁.jpg" alt="反抗的忧郁">
+                        <a href="https://book.douban.com/subject/36363533/">查看</a> 
+                        <p>《反抗的抑郁》</p>
+                        <p>￥39.00</p>
+                    </div>
+                    <div class="book-item">
+                        <img src="../image/沙丘1.jpg" alt="沙丘1">
+                        <a href="https://book.douban.com/subject/26836970/">查看</a> 
+                        <p>《沙丘1》</p>
+                        <p>￥29.00</p>
+                    </div>
+                     <div class="book-item">
+                        <img src="../image/闪亮的水环.jpg" alt="闪亮的水环">
+                        <a href="https://book.douban.com/subject/37415369/">查看</a> 
+                        <p>《闪亮的水环》</p>
+                        <p>￥29.00</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="book-section">
+                <h4>📖 新书上市</h4>
+                <div class="new-books">
+                    <table>
+                        <tr>
+                            <th>书名</th>
+                            <th>作者</th>
+                            <th>价格</th>
+                        </tr>
+                        <tr>
+                            <td>《找回我自己》</td>
+                            <td>[加] 萨拉·库布里克</td>
+                            <td>￥69.00</td>
+                        </tr>
+                        <tr>
+                            <td>《投喂AI》</td>
+                            <td>[英]詹姆斯·马尔登</td>
+                            <td>￥59.00</td>
+                        </tr>
+                        <tr>
+                            <td>《我们赖以生存的植物》</td>
+                            <td>[英] 西蒙·巴恩斯</td>
+                            <td>￥49.00</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        
+        <aside class="right-sidebar">
+            <h4>🎁 促销专区</h4>
+            
+            <div class="promotion">
+                <h5>满100减20</h5>
+                <p>购买任意图书满100元立减90元，限今日！</p>
+            </div>
+            <div class="promotion">
+                <h5>新人优惠券</h5>
+                <p>新用户注册即送50元无门槛券，先到先得！</p>
+            </div>
+            <div class="promotion">
+                <h5>限时折扣</h5>
+                <p>部分编程图书低至1折，手慢无！</p>
+            </div>
+        </aside>
+    </div>
+
+    
+    <footer>
+        <p>&copy; 2504 陈德睿. 保留所有权利.</p>
+    </footer>
+</body>
+</html>
