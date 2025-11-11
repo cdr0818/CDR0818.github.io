@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录/注册页面</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+       
+        .form-toggle {
+            display: flex;
+            background: #f5f5f5;
+        }
+        
+        .toggle-btn {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+            background: none;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .toggle-btn.active {
+            background: white;
+            color: #2575fc;
+        }
+        
+        .toggle-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #2575fc;
+        }
+        
+        
+        .form-container {
+            padding: 30px;
+        }
+        
+        .form {
+            display: none;
+        }
+        
+        .form.active {
+            display: block;
+        }
+        
+        .form-title {
+            margin-bottom: 25px;
+            color: #333;
+            font-size: 24px;
+            text-align: center;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: bold;
+        }
+        
+        .input-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e1e1e1;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .input-group input:focus {
+            border-color: #2575fc;
+            outline: none;
+            box-shadow: 0 0 5px rgba(37, 117, 252, 0.3);
+        }
+        .footer-image ul {
+            list-style: none;
+            display: flex;
+            justify-content: space - around;
+            margin-top:15px;
+            gap:40px;
+        }
+
+        .footer-image ul li img {
+            width: 40px;
+            height: 40px;
+             }   
+        .btn {
+            width: 100%;
+            padding: 14px;
+            background: #2575fc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+        
+        .btn:hover {
+            background: #1a65e0;
+        }
+        
+        
+        .container {
+                width: 100%;
+                height:40%;
+                ;
+            }
+            
+         .form-container {
+                padding: 20px;
+            }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-toggle">
+            <button class="toggle-btn active" id="loginBtn">登录</button>
+            <button class="toggle-btn" id="registerBtn">注册</button>
+        </div>
+        
+        <div class="form-container">
+            
+            <form id="loginForm" class="form active">
+                <h2 class="form-title">欢迎回来</h2>
+                
+                <div class="input-group">
+                    <label for="loginEmail">邮箱/电话/用户名</label>
+                    <input type="text" id="logintext" required placeholder="请输入">
+                </div>
+                
+                <div class="input-group">
+                    <label for="loginPassword">密码</label>
+                    <input type="password" id="loginPassword" required placeholder="请输入密码">
+                </div>
+                
+                <button type="submit" class="btn">登录</button>
+                <p class="agree">登录即同意 <a href="#">用户协议</a>、<a href="#">隐私政策</a></p>
+                <p >其他登录方式：</p>
+                <div class="footer-image">
+                <ul>
+                    <li><img src="../image/wechat.png" alt="微信图标"></li>
+                    <li><img src="../image/支付宝.jpg" alt="支付宝图标"></li>
+                    <li><img src="../image/qq.jpeg" alt="QQ图标"></li>
+                    <li><img src="../image/微博.jpg" alt="微博图标"></li>
+                    <li><img src="../image/百度.jpg" alt="百度图标"></li>
+                </ul>
+                </div>
+    
+            </form>
+            
+            
+           
+            <form id="registerForm" class="form">
+                <h2 class="form-title">创建账号</h2>
+                
+                <div class="input-group">
+                    <label for="registerName">姓名</label>
+                    <input type="text" id="registerName" required placeholder="请输入您的姓名">
+                </div>
+                
+                <div class="input-group">
+                    <label for="registerEmail">邮箱</label>
+                    <input type="email" id="registerEmail" required placeholder="请输入您的邮箱">
+                </div>
+                
+                <div class="input-group">
+                    <label for="registerPassword">密码</label>
+                    <input type="password" id="registerPassword" required placeholder="至少8位字符">
+                </div>
+                
+                <div class="input-group">
+                    <label for="confirmPassword">确认密码</label>
+                    <input type="password" id="confirmPassword" required placeholder="请再次输入密码">
+                </div>
+                
+                <button type="submit" class="btn">注册</button>
+            </form>
+
+            <script>
+        
+             const loginBtn = document.getElementById('loginBtn');
+             const registerBtn = document.getElementById('registerBtn');
+             const loginForm = document.getElementById('loginForm');
+             const registerForm = document.getElementById('registerForm');
+        
+             loginBtn.addEventListener('click', () => {
+             loginBtn.classList.add('active');
+             registerBtn.classList.remove('active');
+             loginForm.classList.add('active');
+             registerForm.classList.remove('active');
+             });
+        
+             registerBtn.addEventListener('click', () => {
+             registerBtn.classList.add('active');
+             loginBtn.classList.remove('active');
+             registerForm.classList.add('active');
+             loginForm.classList.remove('active');
+             });
+        
+        
+        
+            </script>
+        </div>
+    </div>
+
+    
+</body>
+</html>

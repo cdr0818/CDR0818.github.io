@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图书订阅推荐</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', sans-serif;
+        }
+        body {
+            background-color: #f5f7fa;
+            padding: 20px;
+            color: #333;
+        }
+        #recommend {
+            max-width: 600px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .details {
+            padding: 30px;
+        }
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+        }
+        .form-group {
+            margin-bottom: 25px;
+        }
+        p.section-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #34495e;
+        }
+        .options-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .option-item {
+            display: flex;
+            align-items: center;
+        }
+        input[type="radio"], 
+        input[type="checkbox"] {
+            margin-right: 8px;
+            cursor: pointer;
+        }
+        label {
+            cursor: pointer;
+            user-select: none;
+        }
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        .btn-submit {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            transition: background 0.3s;
+        }
+        .btn-submit:hover {
+            background: #2980b9;
+        }
+        .form-note {
+            font-size: 0.85rem;
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="recommend">
+        <div class="details">
+            <h2>📚 个性化图书订阅推荐</h2>
+            <form method="post" enctype="multipart/form-data">
+                
+                <div class="form-group">
+                    <p class="section-title">性别</p>
+                    <div class="options-container">
+                        <div class="option-item">
+                            <input type="radio" id="male" name="gender" value="male">
+                            <label for="male">男</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" id="female" name="gender" value="female">
+                            <label for="female">女</label>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="form-group">
+                    <p class="section-title">兴趣（可多选）</p>
+                    <div class="options-container">
+                        <div class="option-item">
+                            <input type="checkbox" id="tech" name="interests" value="technology">
+                            <label for="tech">科技</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="checkbox" id="sports" name="interests" value="sports">
+                            <label for="sports">运动</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="checkbox" id="music" name="interests" value="music">
+                            <label for="music">音乐</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="checkbox" id="travel" name="interests" value="travel">
+                            <label for="travel">旅游</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="checkbox" id="food" name="interests" value="food">
+                            <label for="food">美食</label>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="form-group">
+                    <p class="section-title">所在城市 <span class="form-note">(必填)</span></p>
+                    <select name="city" required>
+                        <option value="">-- 请选择城市 --</option>
+                        <option value="beijing">北京</option>
+                        <option value="shanghai">上海</option>
+                        <option value="guangzhou">广州</option>
+                        <option value="shenzhen">深圳</option>
+                        <option value="hangzhou">杭州</option>
+                        <option value="chengdu">成都</option>
+                    </select>
+                </div>
+                <textarea name="introduction" placeholder="请输入说明（200字以内）" rows="10" cols="77"></textarea>
+                <label for="fileUpload">你喜爱的图书：</label>
+                <input type="file" id="fileUpload" name="userFile" multiple>
+                <button type="submit" class="btn-submit">生成我的书单</button>
+            </form>
+        </div>    
+    </div>
+</body>
+</html>
