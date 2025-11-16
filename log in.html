@@ -13,7 +13,6 @@
         }
         
         body {
-            
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -31,7 +30,11 @@
             position: relative;
         }
         
-       
+        
+        .tab-toggle {
+            display: none;
+        }
+        
         .form-toggle {
             display: flex;
             background: #f5f5f5;
@@ -65,7 +68,6 @@
             background: #2575fc;
         }
         
-        
         .form-container {
             padding: 30px;
         }
@@ -74,8 +76,27 @@
             display: none;
         }
         
-        .form.active {
+     
+        #login-toggle:checked ~ .form-container #loginForm,
+        #register-toggle:checked ~ .form-container #registerForm {
             display: block;
+        }
+        
+        #login-toggle:checked ~ .form-toggle .toggle-btn[for="login-toggle"],
+        #register-toggle:checked ~ .form-toggle .toggle-btn[for="register-toggle"] {
+            background: white;
+            color: #2575fc;
+        }
+        
+        #login-toggle:checked ~ .form-toggle .toggle-btn[for="login-toggle"]::after,
+        #register-toggle:checked ~ .form-toggle .toggle-btn[for="register-toggle"]::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #2575fc;
         }
         
         .form-title {
@@ -110,10 +131,11 @@
             outline: none;
             box-shadow: 0 0 5px rgba(37, 117, 252, 0.3);
         }
+        
         .footer-image ul {
             list-style: none;
             display: flex;
-            justify-content: space - around;
+            justify-content: space-around;
             margin-top:15px;
             gap:40px;
         }
@@ -121,7 +143,8 @@
         .footer-image ul li img {
             width: 40px;
             height: 40px;
-             }   
+        }
+        
         .btn {
             width: 100%;
             padding: 14px;
@@ -140,36 +163,28 @@
             background: #1a65e0;
         }
         
-        
-        .container {
-                width: 100%;
-                height:40%;
-                ;
-            }
-            
-         .form-container {
-                padding: 20px;
-            }
-         .remember-me {
+        .remember-me {
             display: flex;
-            align-items: right;
+            align-items: center;
             gap: 0.5rem;
-            margin-bottom: 0rem;
+            margin-bottom: 1rem;
         }
     </style>
 </head>
 <body>
     <div class="container">
+        
+        <input type="radio" name="tab" id="login-toggle" class="tab-toggle" checked >
+        <input type="radio" name="tab" id="register-toggle" class="tab-toggle" checked>
+        
         <div class="form-toggle">
-            <button class="toggle-btn active" id="loginBtn">登录</button>
-            <button class="toggle-btn" id="registerBtn">注册</button>
+            <label for="login-toggle" class="toggle-btn active">登录</label>
+            <label for="register-toggle" class="toggle-btn">注册</label>
         </div>
         
         <div class="form-container">
-            
+           
             <form id="loginForm" class="form active">
-                
-                
                 <div class="input-group">
                     <label for="loginEmail">用户:</label>
                     <input type="text" id="logintext" required placeholder="请输入用户名或邮箱">
@@ -179,37 +194,37 @@
                     <label for="loginPassword">密码</label>
                     <input type="password" id="loginPassword" required placeholder="请输入密码">
                 </div>
+                
                 <div class="remember-me">
-                <input type="checkbox" id="remember" >
-                <label for="remember">记住我</label>
+                    <input type="checkbox" id="remember">
+                    <label for="remember">记住我</label>
                 </div>
+                
                 <button type="submit" class="btn">登录</button>
                 <p>&nbsp;</p>
                 
                 <p class="agree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;登录即同意 <a href="#">用户协议</a>、<a href="#">隐私政策</a></p>
                 <p>&nbsp;</p>
-                <p >其他登录方式：</p>
+                <p>其他登录方式：</p>
+                
                 <div class="footer-image">
-                <ul>
-                    <li><img src="https://cdr0818.github.io/wechat.png" alt="微信图标"></li>
-                    <li><img src="https://cdr0818.github.io/支付宝.jpg" alt="支付宝图标"></li>
-                    <li><img src="https://cdr0818.github.io/qq.jpeg" alt="QQ图标"></li>
-                    <li><img src="https://cdr0818.github.io/微博.jpg" alt="微博图标"></li>
-                    <li><img src="https://cdr0818.github.io/百度.jpg" alt="百度图标"></li>
-                </ul>
+                    <ul>
+                        <li><img src="https://cdr0818.github.io/wechat.png" alt="微信图标"></li>
+                        <li><img src="https://cdr0818.github.io/支付宝.jpg" alt="支付宝图标"></li>
+                        <li><img src="https://cdr0818.github.io/qq.jpeg" alt="QQ图标"></li>
+                        <li><img src="https://cdr0818.github.io/微博.jpg" alt="微博图标"></li>
+                        <li><img src="https://cdr0818.github.io/百度.jpg" alt="百度图标"></li>
+                    </ul>
                 </div>
-    
             </form>
             
             
-           
             <form id="registerForm" class="form">
-                
-                
                 <div class="input-group">
                     <label for="registerName">用户名：</label>
                     <input type="text" id="registerName" required placeholder="请输入用户名/电话/邮箱">
                 </div>
+                
                 <div class="input-group">
                     <label for="registerPassword">密码</label>
                     <input type="password" id="registerPassword" required placeholder="至少8位，要求包含至少两种类型">
@@ -221,53 +236,19 @@
                 </div>
                 
                 <button type="submit" class="btn">注册</button>
-                <p >其他注册方式：</p>
+                <p>其他注册方式：</p>
+                
                 <div class="footer-image">
-                <ul>
-                    <li><img src="https://cdr0818.github.io/wechat.png" alt="微信图标"></li>
-                    <li><img src="https://cdr0818.github.io/支付宝.jpg" alt="支付宝图标"></li>
-                    <li><img src="https://cdr0818.github.io/qq.jpeg" alt="QQ图标"></li>
-                    <li><img src="https://cdr0818.github.io/微博.jpg" alt="微博图标"></li>
-                    <li><img src="https://cdr0818.github.io/百度.jpg" alt="百度图标"></li>
-                </ul>
+                    <ul>
+                        <li><img src="https://cdr0818.github.io/wechat.png" alt="微信图标"></li>
+                        <li><img src="https://cdr0818.github.io/支付宝.jpg" alt="支付宝图标"></li>
+                        <li><img src="https://cdr0818.github.io/qq.jpeg" alt="QQ图标"></li>
+                        <li><img src="https://cdr0818.github.io/微博.jpg" alt="微博图标"></li>
+                        <li><img src="https://cdr0818.github.io/百度.jpg" alt="百度图标"></li>
+                    </ul>
                 </div>
             </form>
-
-            
         </div>
     </div>
-            <script>
-        
-             const loginBtn = document.getElementById('loginBtn');
-             const registerBtn = document.getElementById('registerBtn');
-             const loginForm = document.getElementById('loginForm');
-             const registerForm = document.getElementById('registerForm');
-        
-             loginBtn.addEventListener('click', () => {
-             loginBtn.classList.add('active');
-             registerBtn.classList.remove('active');
-             loginForm.classList.add('active');
-             registerForm.classList.remove('active');
-             });
-        
-             registerBtn.addEventListener('click', () => {
-             registerBtn.classList.add('active');
-             loginBtn.classList.remove('active');
-             registerForm.classList.add('active');
-             loginForm.classList.remove('active');
-             });
-        
-        
-        
-            </script>
-        </div>
-    </div>
-
-    
 </body>
 </html>
-
-
-
-
-
