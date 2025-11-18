@@ -509,6 +509,90 @@
             opacity: 1;
             transform: translateX(0);
         }
-        .recommend{
-            border: 1px solid #333;
+        .modal {
+            display: none; 
+            position: fixed; 
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); 
+            padding: 30px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #fff;
+            z-index: 999; 
+            width: 400px;
+            max-width: 90%; 
         }
+        
+        .modal:target {
+            display: block;
+        }
+        .modal-title {
+            font-size: 22px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #2f3640;
+        }
+        .modal-input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            outline: none;
+        }
+        .modal-btn {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background: #00a8ff;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .modal-btn:hover {
+            background: #0097e6;
+        }
+        .modal-footer {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+        .modal-footer a {
+            color: #00a8ff;
+            text-decoration: none;
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            color: #666;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .close-btn:hover {
+            color: #2f3640;
+        }
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .footer-image ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            margin-top:15px;
+            gap:40px;
+        }
+
+        .footer-image ul li img {
+            width: 40px;
+            height: 40px;
+        }
+
