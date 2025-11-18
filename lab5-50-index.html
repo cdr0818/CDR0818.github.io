@@ -25,8 +25,8 @@
                     </div>
                 </li>
                 <li><a href="https://book.douban.com/latest?subcat=%E5%85%A8%E9%83%A8">新书上市</a></li>
-                <li><a href="https://cdr0818.github.io/log in.html">登录/注册</a></li>
                 <li><a href="https://www.douban.com/about/contactus">联系我们</a></li>
+                <li><a href="#login-modal">登录/注册</a></li>
             </ul>
         </div>
     </header>
@@ -75,7 +75,53 @@
             </div>
                   
         </div>
-        
+        <div id="login-modal" class="modal">
+            <a href="#" class="close-btn">x</a> 
+            <h2 class="modal-title">用户登录</h2>
+            <label for="logiinname">用户:</label>
+            <input type="text" class="modal-input" placeholder="请输入用户名/邮箱" required>
+            <label for="loginpassword">密码:</label>
+            <input type="password" class="modal-input" placeholder="请输入密码" required>
+            <button class="modal-btn">登录</button>
+            <div class="remember-me">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">记住我</label>
+            </div>
+            <p class="agree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;登录即同意 <a href="#">用户协议</a>、<a href="#">隐私政策</a></p>
+                
+                <p>其他登录方式：</p>
+                
+                <div class="footer-image">
+                    <ul>
+                        <li><img src="https://cdr0818.github.io/wechat.png" alt="微信图标"></li>
+                        <li><img src="https://cdr0818.github.io/支付宝.jpg" alt="支付宝图标"></li>
+                        <li><img src="https://cdr0818.github.io/qq.jpeg" alt="QQ图标"></li>
+                        <li><img src="https://cdr0818.github.io/微博.jpg" alt="微博图标"></li>
+                        <li><img src="https://cdr0818.github.io/百度.jpg" alt="百度图标"></li>
+                    </ul>
+                </div>
+            <div class="modal-footer">
+                还没有账号？<a href="#register-modal">立即注册</a>
+            </div>
+        </div>
+
+    
+        <div id="register-modal" class="modal">
+            <a href="#" class="close-btn">x</a> 
+            <h2 class="modal-title">用户注册</h2>
+            <label for="loginname">用户:</label>
+            <input type="text" class="modal-input" placeholder="请输入用户名" required>
+            <label for="loginemile">邮箱/电话:</label>
+            <input type="text" class="modal-input" placeholder="绑定电话/邮箱" required>
+            <label for="loginpassword">密码:</label>
+            <input type="password" class="modal-input" placeholder="请输入密码（至少三种字符，至少8位）" required>
+            <label for="loginpassword">确认密码:</label>
+            <input type="password" class="modal-input" placeholder="再次输入密码" required>
+            <button class="modal-btn">注册</button>
+            <div class="modal-footer">
+            已有账号？<a href="#login-modal">立即登录</a>
+            </div>
+        </div>
             
            
         
@@ -286,6 +332,7 @@
     </script>
 </body>
 </html>
+
 
 
 
