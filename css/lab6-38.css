@@ -1104,7 +1104,7 @@
         }
 
         .author-card:hover {
-            transform: translateY(-5px) scale(1.05);
+            transform: translateY(-5px) scale(1.2);
             border-color: #ff6b6b;
             box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
             background: linear-gradient(45deg, #ff6b6b, #ee5a24);
@@ -1128,3 +1128,4 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
+
