@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>数字图书展销平台</title>
+    <link rel="stylesheet" href="../CSS/lab8-38.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_5039821_7r27lp6e769.css">
+    
+    
+    
+</head>
+<body>
+    
+    <div class="time-display" id="timeDisplay"></div>
+    
+    <header>
+        <div class="header-content clearfix" style="display: flex; align-items:center;">
+            <div class="logo">📚 图书商城</div>
+            
+           
+            <div class="smart-search-container">
+                <div class="search-bar" style="width: 100%;">
+                    <input type="text" id="smartSearchInput" placeholder="搜索图书名称、作者或分类..." class="form-control">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+                <div class="smart-search-results" id="smartSearchResults"></div>
+            </div>
+            
+            <div class="nav-icons">
+                <i class="fas fa-shopping-cart cart-icon"></i>
+            </div>
+            <ul class="nav">
+                <li class="dropdown">
+                    <a href="https://book.douban.com/chart?subcat=all&icn=index-topchart-popular">热门推荐 ▼</a>
+                    <div class="dropdown-content">
+                        <a href="#">本周热销</a>
+                        <a href="#">月度榜单</a>
+                        <a href="#">年度精选</a>
+                    </div>
+                </li>
+                <li><a href="https://book.douban.com/latest?subcat=%E5%85%A8%E9%83%A8">新书上市</a></li>
+                <li><a href="https://www.douban.com/about/contactus">联系我们</a></li>
+                <li><button class="login-btn" onclick="window.location.href='#login-modal'">登录/注册</button></li>
+            </ul>
+        </div>
+    </header>
+    
+    <div class="main-container clearfix">
+        <div class="left-bar">
+            <h3><i class="fas fa-book"></i>&nbsp;&nbsp;图书分类</h3>
+            <div class="filter-dropdown">
+                <button class="filter-btn">按价格筛选 ▼</button>
+                <div class="filter-content">
+                    <a href="#">0-10元</a>
+                    <a href="#">10-30元</a>
+                    <a href="#">30-50元</a>
+                    <a href="#">50元以上</a>
+                </div>
+            </div>
+            
+            <a href="#"><span class="iconfont icon-tubiao1shuxiaoshuo"></span>文学小说</a>
+            <a href="#"><span class="iconfont icon-jisuanji"></span>计算机科学</a>
+            <a href="#"><span class="iconfont icon-_shehuijingji"></span>经济管理</a>
+            <a href="#"><span class="iconfont icon-renwenlishi"></span>人文历史</a>
+            <a href="#"><span class="iconfont icon-kepu"></span>科普教育</a>
+            <a href="#"><span class="iconfont icon-yishushejichuanmei"></span>艺术传媒</a>
+            <a href="#"><span class="iconfont icon-jiaoyukaoshi"></span>教育考试</a>
+            <a href="#"><span class="iconfont icon-shenghuoxiuxian"></span>生活休闲</a>
+
+            <button class="recommend-form" onclick="window.location.href='recommend form.html'">
+                个性化图书订阅推荐
+            </button>
+            <h3><i class="fas fa-tags"></i>&nbsp;&nbsp;热门标签</h3>
+            <div class="tag-list">
+                <div class="tag">漫画</div>
+                <div class="tag">随笔</div>
+                <div class="tag">哲学</div>
+                <div class="tag">教育</div>
+                <div class="tag">旅行</div>
+                <div class="tag">推理</div>
+                <div class="tag">交互设计</div>
+                <div class="tag">神经网络</div>
+                <div class="tag">编程</div>
+                <div class="tag">诺贝尔文学奖</div>
+            </div>
+            <div class="authors-section">
+                <h2 class="section-title">⭐ 热门作者</h2>
+                <div class="authors-grid">
+                    <div class="author-card">
+                        <img src="/image/余华.jpg" alt="作者头像" class="author-avatar">
+                        <div class="author-name">余华</div>
+                    </div>
+                    <div class="author-card">
+                        <img src="/image/村上春树.webp" alt="作者头像" class="author-avatar">
+                        <div class="author-name">村上春树</div>
+                    </div>
+                    <div class="author-card">
+                        <img src="/image/东野圭吾.webp" alt="作者头像" class="author-avatar">
+                        <div class="author-name">东野圭吾</div>
+                    </div>
+                    <div class="author-card">
+                        <img src="/image/刘慈欣.jpg" alt="作者头像" class="author-avatar">
+                        <div class="author-name">刘慈欣</div>
+                    </div>
+                    <div class="author-card">
+                        <img src="/image/莫言.jpg" alt="作者头像" class="author-avatar">
+                        <div class="author-name">莫言</div>
+                    </div>
+                    <div class="author-card">
+                        <img src="/image/路遥.webp" alt="作者头像" class="author-avatar">
+                        <div class="author-name">路遥</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <form id="login-modal" class="modal">
+            <a href="#" class="close-btn">x</a> 
+            <h2 class="modal-title">用户登录</h2>
+            
+            <div class="form-group">
+                <label for="username">用户名 (邮箱/手机号):</label>
+                <input type="text" id="username" class="form-control" placeholder="请输入邮箱或手机号">
+                <div class="error-message" id="usernameError"></div>
+                <div class="success-message" id="usernameSuccess"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">密码:</label>
+                <input type="password" id="password" class="form-control" placeholder="请输入密码">
+                <div class="password-strength">
+                    <div class="strength-meter" id="passwordStrength"></div>
+                </div>
+                <div class="error-message" id="passwordError"></div>
+                <div class="success-message" id="passwordSuccess"></div>
+            </div>
+            
+            <button type="submit" class="modal-btn" id="loginBtn">登录</button>
+            
+            <div class="remember-me">
+                <input type="checkbox" id="remember">
+                <label for="remember">记住我</label>
+            </div>
+            <p class="agree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;登录即同意 <a href="#">用户协议</a>、<a href="#">隐私政策</a></p>
+            <p>其他登录方式：</p>
+            <div class="footer-image">
+                <ul>
+                    <li><img src="/image/wechat.png" alt="微信图标"></li>
+                    <li><img src="/image/支付宝.jpg" alt="支付宝图标"></li>
+                    <li><img src="/image/qq.jpeg" alt="QQ图标"></li>
+                    <li><img src="/image/微博.jpg" alt="微博图标"></li>
+                    <li><img src="/image/百度.jpg" alt="百度图标"></li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                还没有账号？<a href="#register-modal">立即注册</a>
+            </div>
+        </form>
+
+        
+        <form id="register-modal" class="modal">
+            <a href="#" class="close-btn">x</a> 
+            <h2 class="modal-title">用户注册</h2>
+            
+            <div class="form-group">
+                <label for="regUsername">用户名 (邮箱/手机号):</label>
+                <input type="text" id="regUsername" class="form-control" placeholder="请输入邮箱或手机号">
+                <div class="error-message" id="regUsernameError"></div>
+                <div class="success-message" id="regUsernameSuccess"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="regEmail">邮箱:</label>
+                <input type="email" id="regEmail" class="form-control" placeholder="请输入邮箱地址">
+                <div class="error-message" id="regEmailError"></div>
+                <div class="success-message" id="regEmailSuccess"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="regPassword">密码:</label>
+                <input type="password" id="regPassword" class="form-control" placeholder="请输入密码（至少8位）">
+                <div class="password-strength">
+                    <div class="strength-meter" id="regPasswordStrength"></div>
+                </div>
+                <div class="error-message" id="regPasswordError"></div>
+                <div class="success-message" id="regPasswordSuccess"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="regConfirmPassword">确认密码:</label>
+                <input type="password" id="regConfirmPassword" class="form-control" placeholder="请再次输入密码">
+                <div class="error-message" id="regConfirmPasswordError"></div>
+                <div class="success-message" id="regConfirmPasswordSuccess"></div>
+            </div>
+            
+            <button type="submit" class="modal-btn" id="registerBtn">注册</button>
+            
+            <div class="modal-footer">
+                已有账号？<a href="#login-modal">立即登录</a>
+            </div>
+        </form>
+            
+        <main class="main-content">
+            <section class="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item">
+                        <img src="/image/sell1.jpg" alt="图书促销 banner">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/image/sell2.jpg" alt="新书推荐 banner">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/image/sell3.jpg" alt="经典图书 banner">
+                    </div>
+                </div>
+            </section>
+
+            
+            <div class="countdown-section">
+                <div class="countdown-title">🔥 限时抢购 - 距离结束还剩</div>
+                <div class="countdown-display" id="countdownDisplay">--天--小时--分钟--秒</div>
+            </div>
+
+            
+            <div class="recommended-books">
+                <div class="recommended-title">
+                    <h3>🎲 随机推荐</h3>
+                    <button class="refresh-btn" id="refreshRecommendations">换一批</button>
+                </div>
+                <div class="book-recommendations" id="bookRecommendations">
+                  
+                </div>
+            </div>
+
+           
+            <div class="controls-section">
+                <h3>📚 图书列表</h3>
+                <div class="sorting-controls">
+                    <button class="control-btn" id="sortByPriceAsc">价格升序</button>
+                    <button class="control-btn" id="sortByPriceDesc">价格降序</button>
+                    <button class="control-btn" id="sortByRating">按评分排序</button>
+                    <div class="filter-control">
+                        <input type="checkbox" id="inStockOnly" class="filter-checkbox">
+                        <label for="inStockOnly">只看有货</label>
+                    </div>
+                </div>
+                <div class="book-list" id="bookList">
+                   
+                </div>
+            </div>
+
+            <div class="middle-column">
+                <h2 style="text-align: center; color: #333; margin-bottom: 20px;">🌟 双十二热销图书</h2>
+                <div class="books-grid">
+                    <div class="book-card">
+                        <img src="/image/撒旦探戈.jpg" alt="图书封面" class="book-cover">
+                        <div class="book-title">《撒旦探戈》</div>
+                        <div class="book-price"><span class="original-price">¥39.80</span>¥25.90</div>
+                    </div>
+                    <div class="book-card">
+                        <img src="/image/百年孤独.jpg" alt="图书封面" class="book-cover">
+                        <div class="book-title">《百年孤独》</div>
+                        <div class="book-price"><span class="original-price">¥49.80</span>¥32.90</div>
+                    </div>
+                    <div class="book-card">
+                        <img src="/image/反抗的忧郁.jpg" alt="图书封面" class="book-cover">
+                        <div class="book-title">《反抗的抑郁》</div>
+                        <div class="book-price"><span class="original-price">¥89.00</span>¥59.90</div>
+                    </div>
+                    <div class="book-card">
+                        <img src="/image/人类简史.jpg" alt="图书封面" class="book-cover">
+                        <div class="book-title">《人类简史》</div>
+                        <div class="book-price"><span class="original-price">¥68.00</span>¥45.80</div>
+                    </div>
+                    <div class="book-card">
+                        <img src="/image/闪亮的水环.jpg" alt="图书封面" class="book-cover">
+                        <div class="book-title">《闪亮的水环》</div>
+                        <div class="book-price"><span class="original-price">¥29.80</span>¥19.90</div>
+                    </div>
+                    <div class="book-card">
+                        <img src="/image/沙丘1.jpg" alt="图书封面" class="book-cover">
+                        <div class="book-title">《沙丘1》</div>
+                        <div class="book-price"><span class="original-price">¥59.00</span>¥39.90</div>
+                    </div>
+                </div>
+            </div>
+            
+            <section class="book-section">
+                <h4>📖 新书上市</h4>
+                <div class="new-books">
+                    <table>
+                        <tr>
+                            <th>书名</th>
+                            <th>作者</th>
+                            <th>价格</th>
+                        </tr>
+                        <tr>
+                            <td>《找回我自己》</td>
+                            <td>[加] 萨拉·库布里克</td>
+                            <td>￥69.00</td>
+                        </tr>
+                        <tr>
+                            <td>《投喂AI》</td>
+                            <td>[英]詹姆斯·马尔登</td>
+                            <td>￥59.00</td>
+                        </tr>
+                        <tr>
+                            <td>《我们赖以生存的植物》</td>
+                            <td>[英] 西蒙·巴恩斯</td>
+                            <td>￥49.00</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <aside class="right-sidebar">
+            <h4>🎁 促销专区</h4>
+            
+            <div class="promotion">
+                <h5>双十一热销</h5>
+                <p>购买任意图书满100元立减90元！</p>
+            </div>
+            <div class="promotion">
+                <h5>新人优惠券</h5>
+                <p>新用户注册即送50元无门槛券，先到先得！</p>
+            </div>
+            <div class="promotion">
+                <h5>限时折扣</h5>
+                <p>部分编程图书低至1折，手慢无！</p>
+            </div>
+            <div class="right-column">
+                <h2 class="promotion-title">🎉 限时促销</h2>
+                <ul class="promotion-list">
+                    <li class="promotion-item" style="--delay: 1;">
+                        <div class="promotion-book">
+                            <img src="https://cdr0818.github.io/image/三体.jpg" alt="促销图书" class="promotion-cover">
+                            <div class="promotion-info">
+                                <div class="promotion-name">《三体》</div>
+                                <span class="promotion-discount">5折优惠</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="promotion-item" style="--delay: 2;">
+                        <div class="promotion-book">
+                            <img src="https://cdr0818.github.io/image/人生解忧.jpg" alt="促销图书" class="promotion-cover">
+                            <div class="promotion-info">
+                                <div class="promotion-name">人生解忧</div>
+                                <span class="promotion-discount">买一送一</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="promotion-item" style="--delay: 3;">
+                        <div class="promotion-book">
+                            <img src="https://cdr0818.github.io/image/九诗心.jpg" alt="促销图书" class="promotion-cover">
+                            <div class="promotion-info">
+                                <div class="promotion-name">九诗心</div>
+                                <span class="promotion-discount">7折特惠</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="promotion-item" style="--delay: 4;">
+                        <div class="promotion-book">
+                            <img src="https://cdr0818.github.io/image/格外的活法.jpg" alt="促销图书" class="promotion-cover">
+                            <div class="promotion-info">
+                                <div class="promotion-name">格外的活法</div>
+                                <span class="promotion-discount">满减活动</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <h3 class="aside-title"><i class="fas fa-ranking-star"></i>&nbsp;&nbsp;畅销榜单</h3>
+            
+            <ul class="bestseller-list">
+                <li class="bestseller-item">
+                    <h4>《活着》</h4>
+                    <p>作者：余华</p>
+                    <p>销量：120万册</p>
+                </li>
+                <li class="bestseller-item">
+                    <h4>《平凡的世界》</h4>
+                    <p>作者：路遥</p>
+                    <p>销量：100万册</p>
+                </li>
+                <li class="bestseller-item">
+                    <h4>《三体》</h4>
+                    <p>作者：刘慈欣</p>
+                    <p>销量：80万册</p>
+                </li>
+                <li class="bestseller-item">
+                    <h4>《追风筝的人》</h4>
+                    <p>作者：卡勒德·胡赛尼</p>
+                    <p>销量：70万册</p>
+                </li>
+                <li class="bestseller-item">
+                    <h4>《解忧杂货店》</h4>
+                    <p>作者：东野圭吾</p>
+                    <p>销量：60万册</p>
+                </li>
+            </ul>
+        </aside>
+    </div>
+    
+    <div class="image-preview" id="imagePreview">
+        <span class="close-preview" onclick="closePreview()">&times;</span>
+        <img id="previewImage" src="" alt="预览图片">
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <div class="floating-cart" onclick="showToast('购物车功能已激活！')">
+        🛒
+        <div class="cart-count" id="cartCount">0</div>
+    </div>
+
+    <div class="back-to-top" id="backToTop" onclick="scrollToTop()">
+        ↑
+    </div>
+
+    <footer>
+        <p>&copy; 2504 陈德睿. 保留所有权利.</p>
+    </footer>
+    
+    <script src="../js/lab7.js" type="module"></script>
+    
+</body>
+</html>
