@@ -612,4 +612,5 @@
         
         // 页面加载完成后演示DOM方法
         window.addEventListener('load', demonstrateDOMMethods);
+
     
