@@ -60,21 +60,21 @@ body {
     background-color: rgba(255,255,255,0.2);
 }
 
-/* 清除浮动 */
+
 .clearfix::after {
     content: "";
     display: table;
     clear: both;
 }
 
-/* 主体内容区 - 使用浮动布局 */
+
 .main-content {
-    margin-top: 100px; /* 为固定定位的头部留出空间 */
+    margin-top: 100px; 
     padding: 20px;
     min-height: calc(100vh - 140px);
 }
 
-/* 左侧栏 - 相对定位 */
+
 .left-sidebar {
     position: relative;
     float: left;
@@ -120,7 +120,7 @@ body {
     transform: translateX(5px);
 }
 
-/* 中间主内容区 */
+
 .content-main {
     float: left;
     width: 56%;
@@ -130,7 +130,7 @@ body {
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* 图书展示区 */
+
 .book-display h3 {
     color: #e74c3c;
     margin-bottom: 20px;
@@ -150,7 +150,7 @@ body {
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
-    position: relative; /* 为悬停效果做准备 */
+    position: relative; 
 }
 
 .book-item:hover {
@@ -200,7 +200,7 @@ body {
     margin-top: 10px;
 }
 
-/* 热门推荐 - 浮动布局 */
+
 .hot-recommend h3 {
     color: #f39c12;
     margin: 30px 0 20px 0;
@@ -337,24 +337,5 @@ body {
     transform: translateY(-3px);
 }
 
-/* 响应式设计 */
-@media (max-width: 1200px) {
-    .left-sidebar { width: 22%; }
-    .content-main { width: 54%; }
-    .right-sidebar { width: 20%; }
-}
 
-@media (max-width: 992px) {
-    .left-sidebar { width: 100%; float: none; margin-right: 0; margin-bottom: 20px; }
-    .content-main { width: 100%; float: none; }
-    .right-sidebar { position: static; width: 100%; margin-top: 20px; }
-    .header { position: static; }
-    .main-content { margin-top: 20px; }
-}
-
-@media (max-width: 768px) {
-    .book-row { flex-direction: column; }
-    .hot-books { flex-direction: column; }
-    .books-table { display: block; overflow-x: auto; }
-}
 
