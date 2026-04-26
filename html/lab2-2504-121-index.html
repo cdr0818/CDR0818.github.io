@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>网上书店</title>
-    <link rel="stylesheet"  href="../css/lab2-2504-121-index.css">
+    <link rel="stylesheet"  href="../CSS/lab3-2504-121-index.css">
 </head>
 
 <body>
@@ -13,15 +13,24 @@
         <div class="logo">
             <h1>📚 online book store</h1>
         </div>
-        <nav class="top-nav">
-            <ul>
-                <li><a href="#">首页</a></li>
-                <li><a href="#">新书推荐</a></li>
-                <li><a href="#">热销排行</a></li>
-                <li><a href="#">会员中心</a></li>
-                <li><a href="#">联系我们</a></li>
-            </ul>
-        </nav>
+        <ul class="nav">
+                <li><a href="https://book.douban.com/">首页</a></li>
+                <li class="dropdown">
+                    <a href="https://book.douban.com/chart?subcat=all&icn=index-topchart-popular">热门推荐 ▼</a>
+                    <div class="dropdown-content">
+                        <a href="#">本周热销</a>
+                        <a href="#">月度榜单</a>
+                        <a href="#">年度精选</a>
+                    </div>
+                </li>
+                <li><a href="https://book.douban.com/latest?subcat=%E5%85%A8%E9%83%A8">新书上市</a></li>
+                
+                <li><a href="https://www.douban.com/about/contactus">联系我们</a></li>
+                
+                <li><a href="#login-modal">登录/注册</a></li>
+                
+                
+        </ul>
     </header>
 
     
@@ -147,5 +156,97 @@
     <div class="back-to-top">
         <a href="#" title="回到顶部">↑</a>
     </div>
+    <div id="login-modal" class="modal">
+            <a href="#" class="close-btn">x</a> 
+            <h2 class="modal-title">用户登录</h2>
+            <label for="logiinname">用户:</label>
+            <input type="text" id="loginUser" class="modal-input" placeholder="请输入用户名/邮箱" required>
+            <label for="loginpassword">密码:</label>
+            <input type="password" id="loginPass" class="modal-input" placeholder="请输入密码" required>
+            <button onclick="login()" class="modal-btn">登录</button>
+            <div class="remember-me">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">记住我</label>
+            </div>
+            <p class="agree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;登录即同意 <a href="#">用户协议</a>、<a href="#">隐私政策</a></p>
+                
+                <p>其他方式：</p>
+                
+                <div class="footer-image">
+                    <ul>
+                        <li><img src="../../image/wechat.png" alt="微信图标"></li>
+                        <li><img src="../../image/支付宝.jpg" alt="支付宝图标"></li>
+                        <li><img src="../../image/qq.jpeg" alt="QQ图标"></li>
+                        <li><img src="../../image/微博.jpg" alt="微博图标"></li>
+                        <li><img src="../../image/百度.jpg" alt="百度图标"></li>
+                    </ul>
+                </div>
+                
+            <div class="modal-footer">
+                还没有账号？<a href="#register-modal">立即注册</a>
+            </div>
+        </div>
+
+    
+        <div id="register-modal" class="modal">
+            <a href="#" class="close-btn">x</a> 
+            <h2 class="modal-title">用户注册</h2>
+            <label for="loginname">用户:</label>
+            <input type="text" id="regUser" class="modal-input" placeholder="请输入用户名" required>
+            
+            <label for="loginpassword">密码:</label>
+            <input type="password" id="regPass" class="modal-input" placeholder="请输入密码（至少三种字符，至少8位）" required>
+            
+            <button onclick="register()" class="modal-btn">注册</button>
+            <div class="modal-footer">
+            已有账号？<a href="#login-modal">立即登录</a>
+            </div>
+        </div>
 </body>
+<script>
+        // 显示指定表单
+        function showForm(formType, event) {
+            event.preventDefault();
+            document.getElementById('loginForm').classList.toggle('active', formType === 'login');
+            document.getElementById('regForm').classList.toggle('active', formType === 'reg');
+        }
+
+        // 注册功能
+        function register() {
+            const user = document.getElementById('regUser').value;
+            const pass = document.getElementById('regPass').value;
+            
+            if (!user || !pass) {
+                alert('请填写完整信息');
+                return;
+            }
+            
+            // 存储到本地
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            if (users.some(u => u.user === user)) {
+                alert('用户名已存在');
+                return;
+            }
+            
+            users.push({user, pass});
+            localStorage.setItem('users', JSON.stringify(users));
+            alert('注册成功');
+            showForm('login');
+        }
+
+        // 登录功能
+        function login() {
+            const user = document.getElementById('loginUser').value;
+            const pass = document.getElementById('loginPass').value;
+            
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            const found = users.find(u => u.user === user && u.pass === pass);
+            
+            if (found) {
+                alert('登录成功');
+            } else {
+                alert('用户名或密码错误');
+            }
+        }
+    </script>
 </html>
